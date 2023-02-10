@@ -1,10 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage('build') {
+        stage('create_artifact') {
             steps {
-                sh 'docker --version'
                 sh './mvnw clean package -DskipTests'
+            }
+        }
+        stage('Create Docker image'){
+            steps{
+                sh 'docker build -t hello .'
             }
         }
     }
