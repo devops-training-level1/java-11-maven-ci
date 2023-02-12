@@ -1,0 +1,16 @@
+image: openjdk:17-alpine
+
+stages:
+  - build
+
+
+build_job:
+  stage: build
+  before_script:
+    - echo "Hello world"
+  script:
+    - java -version 
+  after_script:
+    - echo " My build"
+
+
