@@ -6,6 +6,11 @@ pipeline{
                 sh "./mvnw clean test"
             }
         }
+        stage("Build artifact"){
+            steps{
+                sh "./mvnw clean  install"
+            }
+        }
 
     }
 
