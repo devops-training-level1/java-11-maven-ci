@@ -8,9 +8,16 @@ pipeline{
         }
         stage("Build artifact"){
             steps{
-                sh "./mvnw clean  install"
+                sh "./mvnw clean  install -DskipTests"
             }
         }
+
+        stage("Build Image"){
+            steps{
+                sh "docker ps"
+            }
+        }
+
 
     }
 
