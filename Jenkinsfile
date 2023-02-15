@@ -23,6 +23,12 @@ pipeline{
             }
         }
 
+        stage("Push Image"){
+            steps{
+                sh "docker push gildastema/java-ci-pipeline"
+            }
+        }
+
 
     }
 
