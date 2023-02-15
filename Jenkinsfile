@@ -14,7 +14,7 @@ pipeline{
 
         stage("Build Image"){
             steps{
-                sh "docker build -t gildastema/java-ci-pipeline"
+                sh "docker build -t gildastema/java-ci-pipeline ."
             }
         }
 
