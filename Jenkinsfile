@@ -11,7 +11,7 @@ pipeline{
         }
         stage("Build artifact"){
             steps{
-                sh "./mvnw clean  install -DskipTests"
+                sh "./mvnw clean  install"
             }
         }
 
