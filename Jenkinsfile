@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    environment{
+        DOCKERHUB = credentials('dockerhub')
+    }
     stages{
         stage("Test My code"){
             steps{
@@ -19,7 +22,7 @@ pipeline{
         }
         stage("Login To DockerHub"){
             steps{
-                sh "echo dckr_pat_nDy6TWh4q0T4ltKRHPgtxqIZvE4 | docker login -u gildastema --password-stdin  "
+                sh "echo $DOCKERHUB_PWD | docker login -u $DOCKERHUB_USR --password-stdin  "
             }
         }
 
