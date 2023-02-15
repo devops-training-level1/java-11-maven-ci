@@ -17,6 +17,11 @@ pipeline{
                 sh "docker build -t gildastema/java-ci-pipeline ."
             }
         }
+        stage("Login To DockerHub"){
+            steps{
+                sh "echo dckr_pat_nDy6TWh4q0T4ltKRHPgtxqIZvE4 | docker login -u gildastema --password-stdin  "
+            }
+        }
 
 
     }
